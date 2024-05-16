@@ -10,18 +10,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <script src="js/main.js"></script>
 </head>
 
 <body>
     <!-- Encabezado y navegación -->
     <header>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="sobre-nosotros.html">Sobre nosotros</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="galeria.html">Galería</a>
-            <a href="turnos.html">Turnos On-line</a>
-            <a href="contacto.html">Contacto</a>
+        <nav class="navbar">
+            <div class="logo"><img src="imagenes/BarberShop2.png" alt="logo lords" height="100px"></div>
+            
+            <ul class="nav_links">
+                <li><a href="index.html" aria-label="ir a la pagina de inicio">Inicio</a></li>
+                <li><a href="sobre-nosotros.html" aria-label="Conocer sobre la barberia">Sobre nosotros</a></li>
+                <li><a href="servicios.html" aria-label="Descripcion de los servicios">Servicios</a></li>
+                <li><a href="galeria.html" aria-label="Imagenes sobre cortes de cabello">Galería</a></li>
+                <li><a href="contacto.html" aria-label="Contactenos para mas informacion">Contacto</a></li>
+            </ul>
+    
+            <div class="hamburguesa" aria-label="abrir menu de navegacion">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
         </nav>
     </header>
     <main>
