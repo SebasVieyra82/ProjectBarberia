@@ -1,268 +1,354 @@
-/* Estilos generales */
-body {
-  font-family: "Berkshire Swash", serif;
+*{
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: "Berkshire Swash", serif;
 }
 
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  z-index: 9999;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 0;
-}
-
-nav a {
-  margin: 0 10px;
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #007bff;
-}
-
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
-#hero {
-  margin-top: 50px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-#servicios-destacados {
-  display: flex;
-  justify-content: space-evenly;
-}
-
- /*
-.servicio {
-  text-align: center;
-  margin-bottom: 20px;
-  width: 400px;
-  height: 900px;
-  margin: 50px;
-  padding: 100px;
-  overflow: hidden;
-}
-
-.servicios {
-  text-align: center;
-  margin-bottom: 20px;
-  width: 400px;
-  height: 900px;
-  margin: 50px;
-  padding: 100px;
-  overflow: hidden;
-}
-
-.Servicio1 {
-  width: 100%;
-  height: 100%;
-}
-.Servicio2 {
-  width: 100%;
-  height: 100%;
-}
-*/
-.d-flex{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.botonrojo{
-  background-color: red;
-  padding: 10px;
-  border: 1px solid white;
-  border-radius: 10px;
-  color:#FFF;
+.hamburguesa {
+  display: none;
   cursor: pointer;
 }
 
-a{
-  text-decoration: none;
+.line {
+  display: block;  /* Asegura que se comporte como un div */
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
 }
 
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
+body{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: "Berkshire Swash", serif;
+  /*border: 10px solid red;*/
 }
 
-/* Estilos específicos para el footer */
-.site-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px 20px;
 }
 
-.social-icons {
+.logo {
+ font-size: 25px;
+ font-weight: bold;
+}
+
+.nav_links {
+  display: flex;
+  gap: 20px;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
-.social-icons li {
-  display: inline-block;
-  margin: 0 5px; /* Reducir el margen entre los íconos */
-}
-
-.social-icons a {
-  color: #fff;
-  font-size: 14px; /* Reducir el tamaño de los íconos */
+.nav_links li a {
+  color: white;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3;
 }
 
-.social-icons a:hover {
-  color: #007bff;
+.nav_links li a:hover{
+  color: #c93c20;
 }
 
-.contenedor-redes {
-  margin-top: 10px; /* Ajustar el espacio entre los íconos y las imágenes */
+.clase_main {
+  color: white;
+  width: 100%; /* Asegura que el main ocupe todo el ancho disponible */
+  height: 100vh; /* Establece una altura para que la imagen pueda cubrir */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centra el contenido verticalmente y horizontalmente */
 }
 
-.contenedor-redes a {
-  display: inline-block;
-  margin: 0 5px; /* Reducir el margen entre las imágenes */
-}
-
-.contenedor-redes img {
-  width: 30px; /* Reducir el tamaño de las imágenes */
-  height: 30px; /* Reducir el tamaño de las imágenes */
-}
-
-/* Estilos específicos de las secciones */
-h1 {
-  color: #fbfbfb;
+.main_imagen {
+  position: relative; /* Necesario para la posición del pseudo-elemento */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
   text-align: center;
-  /* padding: 50px 300px 20px 300px; */ 
-
+  overflow: hidden; /* Asegura que el pseudo-elemento no se salga de los límites del contenedor */
 }
 
-h2{
-  text-align: center; 
-  color: #fbfbfb;
-  
+.main_imagen::before {
+  content: ''; /* Necesario para que el pseudo-elemento se muestre */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../imagenes/fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5; /* Ajusta la opacidad para controlar la transparencia */
+  z-index: -1; /* Sitúa el fondo detrás del contenido */
 }
 
-h3{
-  text-align: center; 
-  color: #fbfbfb;
-  
+/* Estilos para el texto y otros elementos para asegurar su visibilidad sobre el fondo transparente */
+.main_imagen > * { /* Selecciona todos los elementos directos dentro de .main_imagen */
+  position: relative; /* Asegura que el texto y los elementos estén sobre el pseudo-elemento */
+  color: white; /* Ajusta el color del texto para mejor contraste */
+  z-index: 1;
 }
 
-#descripcion{
-  text-align: center;
-  color: #fbfbfb;
+.main_imagen h2, h3, .main_imagen p {
+  max-width: 800px; /* Controla el ancho máximo del texto para mejorar la legibilidad */
+  background-color: rgba(0, 0, 0, 0.5); /* Añade un fondo oscuro semitransparente para mejorar el contraste */
+  padding: 10px; /* Añade padding alrededor del texto */
+  border-radius: 10px; /* Opcional: bordes redondeados */
 }
 
 
-.imagen-galeria {
-  text-align: center;
+.main_imagen p {
+  font-size: 1em; /* Tamaño de fuente para los párrafos */
+  margin-bottom: 10px;
 }
 
-.imagen-galeria img {
-  max-width: 100%;
+.main_imagen h2 {
+  font-size: 1.5em; /* Tamaño de fuente para el título */
+  margin-bottom: 20px; /* Espacio después del título */
+}
+
+.clase_galeria{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.galeria_imagen {
+  flex-basis: calc(35% - 40px); /* Ajustar según la cantidad de imágenes por fila que desees */
+  margin: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0);
+  transition: transform 0.3s ease;
+}
+
+.galeria_imagen:hover{
+  transform: scale(1.05);
+}
+
+.galeria_imagen img {
+  width: 100%;
   height: auto;
+  display: block;
 }
 
-/* Formulario de contacto */
-#contact-form {
-  max-width: 500px;
-  margin: 0 auto;
+.clase_formulario {
+  max-width: 350px; /* Ajuste para hacer el formulario más estrecho */
+  margin: auto; /* Centra el formulario en la página */
+  padding: 20px; /* Espacio interno para no amontonar los elementos */
+  background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente para un aspecto ligero */
+  border-radius: 4px; /* Bordes redondeados para un aspecto suave */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre elementos del formulario */
+}
+
+.terminos-contenedor{
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos del checkbox */
+  gap: 5px; /* Espacio entre checkbox, texto, e imagen */
+  color: black;
+  font-size: 0.8em;
+}
+
+.terminos-contenedor img {
+  width: 20px;
+  vertical-align: middle; /* Alinea la imagen con el texto */
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"],
+input[type="checkbox"],
 textarea,
 select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #ffffff;
+    font-size: 1em; /* Tamaño adecuado del texto */
 }
 
-button[type="submit"] {
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
+input[type="checkbox"] {
+  margin: 0; /* Añade un pequeño margen a la derecha del checkbox */
+  width: auto;
+}
+
+textarea {
+    height: 100px; /* Ajusta la altura del textarea */
+}
+
+button[type="submit"],
+button[type="reset"] {
+  width: 100%; /* Botón que se extiende a lo ancho del formulario */
+  padding: 10px; /* Padding suficiente para la comodidad al presionar */
+  background-color: #c93c20; /* Color distintivo para el botón de envío */
+  color: white; /* Texto blanco para contraste */
+  border: none; /* Sin bordes externos */
+  border-radius: 4px; /* Bordes redondeados para el botón */
+  cursor: pointer; /* Cursor de puntero para indicar interactividad */
+  transition: background-color 0.3s; /* Transición suave para el cambio de color */
+  margin-bottom: 10px;
 }
 
 button[type="submit"]:hover {
-  background-color: #555;
+  background-color: #b2301d; /* Oscurecimiento del botón al pasar el mouse */
 }
 
-/* Bienvenido deslizar hacia abajo */
-.animated {
-  animation: slideInDown 3s ease both;
-}
-
-/* Estilos específicos para dispositivos de escritorio */
-@media only screen and (max-width: 1024px) {
-  body {
-    font-size: 14px;
-  }
-}
-
-/* Estilos específicos para dispositivos móviles */
-@media only screen and (max-width: 767px) {
-  body {
-    font-size: 12px;
-  }
-}
-
-@keyframes slideInDown {
-  from {
-      transform: translateY(-100%);
-  }
-  to {
-      transform: translateY(0);
-  }
-}
-.cat {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-}
-#banner{
+header,body,footer{
+  background-color: rgb(0, 0, 0, 0.7);
   width: 100%;
-  height: 900px;
-  background-image: url("../imagenes/fondo.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: inset 0 0 0 2000px rgba(84, 84, 84, 0.5);
-  
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.red_social-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 10px 5px;
+  flex-wrap: wrap;
+}
+
+.icon_elem_footer{
+  list-style: none;
+}
+
+.icon_footer{
+  color: white;
+  font-size: 35px;
+  display: inline-block;
+  margin: 0 10 px;
+  transition: 0.5s;
+}
+
+.icon_footer:hover{
+  transform: translateY(-10px);
+}
+
+.texto_footer{
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+#instagram:hover, #facebook:hover, #whatsapp:hover{
+  animation: pulse 0.5s infinite;
+  font-size: 2em;
+}
+#instagram:hover{
+  color: rgb(174, 48, 179);
+} 
+#facebook:hover{
+  color: rgb(8, 102, 255);
+}
+#whatsapp:hover{
+  color: rgb(8, 255, 8);
+}
+
+/* Media Query para Celular */
+@media (max-width: 768px) {
+  .clase_formulario {
+    max-width: 90%; /* Más estrecho para celulares */
+  }
+
+  .hamburguesa {
+    display: block;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .nav_links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    background-color: rgba(0 , 0, 0, 0.5);
+  }
+
+  .nav_links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0 , 0, 0, 0.5);
+    text-align: center;
+    z-index: 100;   /*Asegurarse de que el menú esté sobre otros elementos */
+  }
+
+  header .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .terminos-contenedor {
+    flex-direction: column; /* Acomoda términos más legibles en dispositivos móviles */
+    align-items: flex-start;
+  }
+}
+
+/* Media Query para Tablet */
+@media (max-width: 1024px) {
+  .clase_formulario {
+      max-width: 450px; /* Un poco más estrecho para tablet */
+  }
+
+  .nav_links, .hamburguesa {
+      display: block;
+  }
+}
+
+/* Media Query para PC Escritorio */
+@media (min-width: 1025px) {
+  .clase_formulario {
+      max-width: 500px; /* Ideal para escritorios */
+  }
+
+  header .navbar {
+      flex-direction: row;
+      justify-content: space-between;
+  }
+
+  .nav_links {
+      display: flex; /* Asegúrate de que el menú horizontal esté visible */
+      align-items: center;
+  }
+
+  .hamburguesa {
+      display: none; /* Oculta el menú hamburguesa en escritorio */
+  }
 }
