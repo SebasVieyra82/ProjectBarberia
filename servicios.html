@@ -15,29 +15,59 @@
 <body>
     <!-- Encabezado y navegación -->
     <header>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="sobre-nosotros.html">Sobre nosotros</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="galeria.html">Galería</a>
-            <a href="contacto.html">Contacto</a>
+        <nav class="navbar">
+            <div class="logo"><img src="imagenes/BarberShop2.png" alt="logo lords" height="100"></div>
+            <ul class="nav_links">
+                <li><a href="index.html" aria-label="ir a la pagina de inicio">Inicio</a></li>
+                <li><a href="sobre-nosotros.html" aria-label="Conocer sobre la barberia">Sobre nosotros</a></li>
+                <li><a href="servicios.html" aria-label="Descripcion de los servicios">Servicios</a></li>
+                <li><a href="galeria.html" aria-label="Imagenes sobre cortes de cabello">Galería</a></li>
+                <li><a href="turnos.html" aria-label="Seccion de turnos de la barberia">Turnos On-line</a></li>
+                <li><a href="contacto.html" aria-label="Contactenos para mas informacion">Contacto</a></li>
+            </ul>
+            <button class="hamburguesa" aria-label="abrir menu de navegacion" type="button">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>  
         </nav>
     </header>
-
-    <!-- Sección de Servicios -->
-    <section id="serv">
-        <h2>Servicios</h2>
+    <!-- Servicios -->
+    <main class="clase_main">
+        <div class="main_imagen">
+            <h2>Servicios Destacados</h2>
         <h3>Corte de cabello</h3>
-        <p>Corte de cabello con lavado incluido y terminaciones a navaja.</p>
+        <p>Corte de cabello con lavado incluído y terminaciones a navaja.</p>
         <h3>Arreglo de barba</h3>
         <p>Arreglo de barba con fomento caliente y frío. Terminaciones a navaja y productos para el cuidado de tu piel y barba.</p>
-    </section>
-
+        </div>
+    </main>
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Barberia Lords</p>
+    <footer class="footer">
+        <ul class="red_social-icon">
+            <li class="icon_elem_footer">
+                <a href="https://www.instagram.com/lords" class="icon_footer">
+                    <ion-icon name="logo-instagram" id="instagram"></ion-icon>
+                </a>
+            </li>
+
+            <li class="icon_elem_footer">
+                <a href="https://www.facebook.com/lords" class="icon_footer">
+                    <ion-icon name="logo-facebook" id="facebook"></ion-icon>
+                </a>
+            </li>
+
+            <li class="icon_elem_footer">
+                <a href="" class="icon_footer">
+                    <ion-icon name="logo-whatsapp" id="whatsapp"></ion-icon>
+                </a>
+            </li>
+        </ul>
+        <p class="texto_footer">&copy;2024 Barberia Lords</p>
     </footer>
-
+    <!--script js-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>
