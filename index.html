@@ -10,87 +10,57 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
-    <script src="js/main.js"></script>
 </head>
-
 <body>
     <!-- Encabezado y navegación -->
     <header>
         <nav class="navbar">
-            <div class="logo"><img src="imagenes/BarberShop2.png" alt="logo lords" height="100px"></div>
-            
+            <div class="logo"><img src="imagenes/BarberShop2.png" alt="logo lords" height="100"></div>
             <ul class="nav_links">
                 <li><a href="index.html" aria-label="ir a la pagina de inicio">Inicio</a></li>
                 <li><a href="sobre-nosotros.html" aria-label="Conocer sobre la barberia">Sobre nosotros</a></li>
                 <li><a href="servicios.html" aria-label="Descripcion de los servicios">Servicios</a></li>
                 <li><a href="galeria.html" aria-label="Imagenes sobre cortes de cabello">Galería</a></li>
-                <li><a href="turnos.html" aria-label="Turnos online barberia">On-line</a></li>
+                <li><a href="turnos.html" aria-label="Seccion de turnos de la barberia">Turnos On-line</a></li>
                 <li><a href="contacto.html" aria-label="Contactenos para mas informacion">Contacto</a></li>
             </ul>
-    
-            <div class="hamburguesa" aria-label="abrir menu de navegacion">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
+            <button class="hamburguesa" aria-label="abrir menu de navegacion" type="button">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </button>            
         </nav>
     </header>
-    <main>
-    <!-- Sección de Bienvenida -->
-    <section id="hero" class="animated">
-        <div>
-            <h1>BIENVENIDOS</h1>
-            <p>Desde 2015 nos dedicamos a mejorar la imagen de nuestros clientes.
-                El objetivo es brindar el mejor servicio y marcar tendencia.
-                Por eso construimos un espacio en el mundo para que disfrutes y te sientas cómodo.
-                Queremos que LORDS sea tu lugar donde, más allá de cambiar tu look,
-                puedas relajarte, disfrutar de una buena cerveza y encontrarte con amigos.
-                - Te esperamos -</p>
+    <main class="clase_main">
+        <div class="main_imagen">
+            <h2>BARBERIA LORDS</h2>
         </div>
-    </section>
-
-    <div id="app">
-        <section id="banner" class="d-flex">
-            <div class="descripcion-container">
-                <h1>Servicios Destacados</h1>
-                <h2>Corte de cabello</h2>
-                <p id="descripcion">Corte de cabello con lavado incluído y terminaciones a navaja.</p>
-                <h3>Arreglo de barba</h3>
-                <p id="descripcion">Arreglo de barba con fomento caliente y frío. Terminaciones a navaja y productos para el cuidado de tu piel y barba.</p>
-                <!-- <a class="botonrojo" href="reservar.html">Reservar Turno</a> -->
-            </div>
-        </section> 
-        
-        
-    </div>
-    
-    
     </main>
     <!-- Footer -->
-    <footer class="site-footer">
-        <ul class="social-icons">
-            <li>
-                <a href="https://www.facebook.com/lordsbarber" target="_blank">
-                    <i class="fab fa-facebook icon"></i> Facebook
+    <footer class="footer">
+        <ul class="red_social-icon">
+            <li class="icon_elem_footer">
+                <a href="https://www.instagram.com/lords" class="icon_footer">
+                    <ion-icon name="logo-instagram" id="instagram"></ion-icon>
                 </a>
             </li>
-            <li>
-                <a href="https://www.instagram.com/lordsbarber" target="_blank">
-                    <i class="fab fa-instagram icon"></i> Instagram
+
+            <li class="icon_elem_footer">
+                <a href="https://www.facebook.com/lords" class="icon_footer">
+                    <ion-icon name="logo-facebook" id="facebook"></ion-icon>
+                </a>
+            </li>
+
+            <li class="icon_elem_footer">
+                <a href="/" class="icon_footer">
+                    <ion-icon name="logo-whatsapp" id="whatsapp"></ion-icon>
                 </a>
             </li>
         </ul>
-        <div class="contenedor-redes">
-            <a href="https://www.facebook.com/lordsbarber" target="_blank"> 
-                <img src="imagenes/facebook.png" alt="facebooklords"> <!-- MODIFICAR TAMAÑO-->
-            </a>
-            <a href="https://www.instagram.com/lordsbarber" target="_blank"> 
-                <img src="imagenes/instagram.png" alt="instagramlords"> <!-- MODIFICAR TAMAÑO-->
-            </a>
-        </div>
-        <p>&copy; 2024 Barberia Lords</p>
-    </footer>   
-
+        <p class="texto_footer">&copy;2024 Barberia Lords</p>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>
