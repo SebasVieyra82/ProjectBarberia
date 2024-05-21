@@ -36,17 +36,17 @@
     <div class="main_imagen">
       <h2>Turnos Online</h2>
       <form id="turnoForm">
-        <input type="text" name="nombre y apellido" placeholder="Nombre y Apellido" required><br>
-        <input type="tel" name="telefono" placeholder="Teléfono" required><br>
-        <input type="email" name="email" placeholder="Correo electrónico" required><br>
-        <select name="dia">
+        <input type="text" id="nombreApellido" name="nombre y apellido" placeholder="Nombre y Apellido" required><br>
+        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required><br>
+        <input type="email" id="mail" name="email" placeholder="Correo electrónico" required><br>
+        <select name="dia" id="dia">
           <option value="martes">Martes</option>
           <option value="miercoles">Miércoles</option>
           <option value="jueves">Jueves</option>
           <option value="viernes">Viernes</option>
           <option value="sabado">Sábados</option>
         </select>
-        <select name="hora">
+        <select name="hora" id="hora">
           <option value="9">9:00</option>
           <option value="10">9:30</option>
           <option value="11">10:00</option>
@@ -67,7 +67,7 @@
           <option value="26">17:30</option>
           <option value="27">18:00</option>
         </select><br>
-        <button type="submit">Enviar</button>
+        <button type="submit" onclick="guardarInformacion()">Enviar</button>
         <button type="reset">Borrar</button>
       </form>
     </div>

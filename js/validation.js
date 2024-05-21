@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
+    
     function validateForm() {
         const form = document.querySelector('form');
         const name = document.querySelector('input[name="nombre"]').value.trim();
