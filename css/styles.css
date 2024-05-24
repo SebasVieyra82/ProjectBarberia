@@ -1,72 +1,82 @@
-*{
+/* Estilo general para todos los elementos */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Berkshire Swash", serif;
+  font-family: "Berkshire Swash", serif; /* Fuente general */
 }
 
+/* Estilo para el botón de menú hamburguesa */
 .hamburguesa {
-  display: none;
-  cursor: pointer;
+  display: none; /* Ocultar por defecto */
+  cursor: pointer; /* Cambia el cursor al pasar sobre él */
 }
 
+/* Estilo para las líneas del botón hamburguesa */
 .line {
-  display: block;  /* Asegura que se comporte como un div */
+  display: block; /* Asegura que se comporte como un div */
   width: 30px;
   height: 3px;
   background-color: white;
   margin: 5px 0;
 }
 
-body{
+/* Estilo general para el cuerpo de la página */
+body {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  min-height: 100vh;
+  min-height: 100vh; /* Altura mínima para ocupar toda la ventana */
   flex-direction: column;
-  font-family: "Berkshire Swash", serif;
-  /*border: 10px solid red;*/
+  font-family: "Berkshire Swash", serif; /* Fuente general */
 }
 
+/* Estilo para la barra de navegación */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
   color: white;
   padding: 10px 20px;
 }
 
+/* Estilo para el logo */
 .logo {
- font-size: 25px;
- font-weight: bold;
+  font-size: 25px;
+  font-weight: bold;
 }
 
+/* Estilo para la lista de navegación */
 .nav_links {
   display: flex;
-  gap: 20px;
-  list-style: none;
+  gap: 20px; /* Espacio entre los elementos del menú */
+  list-style: none; /* Elimina los puntos de la lista */
 }
 
+/* Estilo para los enlaces de navegación */
 .nav_links li a {
   color: white;
-  text-decoration: none;
-  transition: color 0.3;
+  text-decoration: none; /* Elimina el subrayado */
+  transition: color 0.3s; /* Transición suave para el cambio de color */
 }
 
-.nav_links li a:hover{
-  color: #c93c20;
+/* Estilo para el hover de los enlaces de navegación */
+.nav_links li a:hover {
+  color: #c93c20; /* Color del texto al pasar el mouse */
 }
 
+/* Estilo para el contenido principal */
 .clase_main {
   color: white;
   width: 100%; /* Asegura que el main ocupe todo el ancho disponible */
-  height: 100vh; /* Establece una altura para que la imagen pueda cubrir */
+  height: 100vh; /* Altura completa de la ventana */
   display: flex;
   justify-content: center;
-  align-items: center; /* Centra el contenido verticalmente y horizontalmente */
+  align-items: center; /* Centra el contenido vertical y horizontalmente */
 }
 
+/* Estilo para la imagen principal */
 .main_imagen {
   position: relative; /* Necesario para la posición del pseudo-elemento */
   width: 100%;
@@ -77,11 +87,12 @@ body{
   align-items: center;
   padding: 20px;
   text-align: center;
-  overflow: hidden; /* Asegura que el pseudo-elemento no se salga de los límites del contenedor */
+  overflow: hidden; /* Asegura que el pseudo-elemento no se salga de los límites */
 }
 
+/* Pseudo-elemento para la imagen de fondo */
 .main_imagen::before {
-  content: ''; /* Necesario para que el pseudo-elemento se muestre */
+  content: ''; /* Necesario para mostrar el pseudo-elemento */
   position: absolute;
   top: 0;
   left: 0;
@@ -95,192 +106,220 @@ body{
   z-index: -1; /* Sitúa el fondo detrás del contenido */
 }
 
-/* Estilos para el texto y otros elementos para asegurar su visibilidad sobre el fondo transparente */
-.main_imagen > * { /* Selecciona todos los elementos directos dentro de .main_imagen */
+/* Estilos para los elementos dentro de .main_imagen */
+.main_imagen > * {
   position: relative; /* Asegura que el texto y los elementos estén sobre el pseudo-elemento */
-  color: white; /* Ajusta el color del texto para mejor contraste */
-  z-index: 1;
+  color: white; /* Color del texto para mejor contraste */
+  z-index: 1; /* Asegura que los elementos estén encima del pseudo-elemento */
 }
 
+/* Estilos para el texto dentro de .main_imagen */
 .main_imagen h2, h3, .main_imagen p {
-  max-width: 800px; /* Controla el ancho máximo del texto para mejorar la legibilidad */
-  background-color: rgba(0, 0, 0, 0.5); /* Añade un fondo oscuro semitransparente para mejorar el contraste */
-  padding: 10px; /* Añade padding alrededor del texto */
-  border-radius: 10px; /* Opcional: bordes redondeados */
+  max-width: 800px; /* Ancho máximo del texto para mejorar la legibilidad */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  padding: 10px; /* Padding alrededor del texto */
+  border-radius: 10px; /* Bordes redondeados */
 }
 
-
+/* Estilo para los párrafos dentro de .main_imagen */
 .main_imagen p {
   font-size: 1em; /* Tamaño de fuente para los párrafos */
   margin-bottom: 10px;
 }
 
+/* Estilo para los títulos dentro de .main_imagen */
 .main_imagen h2 {
   font-size: 1.5em; /* Tamaño de fuente para el título */
   margin-bottom: 20px; /* Espacio después del título */
 }
 
-.clase_galeria{
+/* Estilo para la galería */
+.clase_galeria {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten a múltiples líneas */
   justify-content: space-around;
   padding: 20px;
 }
 
+/* Estilo para cada imagen de la galería */
 .galeria_imagen {
-  flex-basis: calc(35% - 40px); /* Ajustar según la cantidad de imágenes por fila que desees */
+  flex-basis: calc(35% - 40px); /* Ancho de cada imagen */
   margin: 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0,0,0); /* Sombra alrededor de las imágenes */
+  transition: transform 0.3s ease; /* Transición suave para la transformación */
 }
 
-.galeria_imagen:hover{
-  transform: scale(1.05);
+/* Efecto hover para las imágenes de la galería */
+.galeria_imagen:hover {
+  transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
 }
 
+/* Estilo para las imágenes dentro de .galeria_imagen */
 .galeria_imagen img {
-  width: 100%;
-  height: auto;
+  width: 100%; /* Ancho completo de la imagen */
+  height: auto; /* Altura automática para mantener la proporción */
   display: block;
 }
 
+/* Estilo para el formulario */
 .clase_formulario {
-  max-width: 350px; /* Ajuste para hacer el formulario más estrecho */
+  max-width: 350px; /* Ancho máximo del formulario */
   margin: auto; /* Centra el formulario en la página */
-  padding: 20px; /* Espacio interno para no amontonar los elementos */
-  background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente para un aspecto ligero */
-  border-radius: 4px; /* Bordes redondeados para un aspecto suave */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+  padding: 20px; /* Padding interno */
+  background: rgba(255, 255, 255, 0.85); /* Fondo semitransparente */
+  border-radius: 4px; /* Bordes redondeados */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Espacio entre elementos del formulario */
+  gap: 10px; /* Espacio entre los elementos del formulario */
 }
 
-.terminos-contenedor{
+/* Estilo para el contenedor de términos */
+.terminos-contenedor {
   display: flex;
-  align-items: center; /* Alinea verticalmente los elementos del checkbox */
-  gap: 5px; /* Espacio entre checkbox, texto, e imagen */
+  align-items: center; /* Alinea verticalmente los elementos */
+  gap: 5px; /* Espacio entre los elementos */
   color: black;
-  font-size: 0.8em;
+  font-size: 0.8em; /* Tamaño de fuente */
 }
 
+/* Estilo para la imagen dentro del contenedor de términos */
 .terminos-contenedor img {
   width: 20px;
   vertical-align: middle; /* Alinea la imagen con el texto */
 }
 
+/* Estilo para los inputs, textarea y select */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="checkbox"],
 textarea,
 select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background: #ffffff;
-    font-size: 1em; /* Tamaño adecuado del texto */
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Padding interno */
+  margin-bottom: 10px; /* Margen inferior */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 4px; /* Bordes redondeados */
+  background: #ffffff; /* Fondo blanco */
+  font-size: 1em; /* Tamaño de fuente */
 }
 
+/* Estilo específico para el checkbox */
 input[type="checkbox"] {
-  margin: 0; /* Añade un pequeño margen a la derecha del checkbox */
-  width: auto;
+  margin: 0; /* Sin margen */
+  width: auto; /* Ancho automático */
 }
 
+/* Estilo específico para el textarea */
 textarea {
-    height: 100px; /* Ajusta la altura del textarea */
+  height: 100px; /* Altura específica */
 }
 
+/* Estilo para los botones de envío y reinicio */
 button[type="submit"],
 button[type="reset"] {
-  width: 100%; /* Botón que se extiende a lo ancho del formulario */
-  padding: 10px; /* Padding suficiente para la comodidad al presionar */
-  background-color: #c93c20; /* Color distintivo para el botón de envío */
-  color: white; /* Texto blanco para contraste */
-  border: none; /* Sin bordes externos */
-  border-radius: 4px; /* Bordes redondeados para el botón */
-  cursor: pointer; /* Cursor de puntero para indicar interactividad */
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Padding interno */
+  background-color: #c93c20; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cambia el cursor al pasar sobre él */
   transition: background-color 0.3s; /* Transición suave para el cambio de color */
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Margen inferior */
 }
 
+/* Efecto hover para los botones */
 button[type="submit"]:hover {
-  background-color: #b2301d; /* Oscurecimiento del botón al pasar el mouse */
+  background-color: #b2301d; /* Color de fondo al pasar el mouse */
 }
 
-header,body,footer{
-  background-color: rgb(0, 0, 0, 0.7);
-  width: 100%;
+/* Estilo general para el header, body y footer */
+header, body, footer {
+  background-color: rgb(0, 0, 0, 0.7); /* Fondo semitransparente */
+  width: 100%; /* Ancho completo */
 }
 
+/* Estilo para el pie de página */
 footer {
   position: relative;
-  width: 100%;
-  min-height: 100px;
-  padding: 20px 50px;
+  width: 100%; /* Ancho completo */
+  min-height: 100px; /* Altura mínima */
+  padding: 20px 50px; /* Padding interno */
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; /* Alinea el contenido en columna */
 }
 
-.red_social-icon{
+/* Estilo para los íconos de redes sociales */
+.red_social-icon {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin: 10px 5px;
-  flex-wrap: wrap;
+  margin: 10px 5px; /* Margen */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten a múltiples líneas */
 }
 
-.icon_elem_footer{
-  list-style: none;
+/* Estilo para los elementos de la lista de íconos */
+.icon_elem_footer {
+  list-style: none; /* Sin estilo de lista */
 }
 
-.icon_footer{
-  color: white;
-  font-size: 35px;
-  display: inline-block;
-  margin: 0 10 px;
-  transition: 0.5s;
+/* Estilo para los íconos */
+.icon_footer {
+  color: white; /* Color blanco */
+  font-size: 35px; /* Tamaño de fuente */
+  display: inline-block; /* Display en bloque */
+  margin: 0 10px; /* Margen */
+  transition: 0.5s; /* Transición suave */
 }
 
-.icon_footer:hover{
-  transform: translateY(-10px);
+/* Efecto hover para los íconos */
+.icon_footer:hover {
+  transform: translateY(-10px); /* Desplazamiento hacia arriba al pasar el mouse */
 }
 
-.texto_footer{
-  color: white;
-  text-align: center;
-  margin-top: 15px;
-  margin-bottom: 10px;
-  font-size: 20px;
+/* Estilo para el texto del pie de página */
+.texto_footer {
+  color: white; /* Color blanco */
+  text-align: center; /* Alineación centrada */
+  margin-top: 15px; /* Margen superior */
+  margin-bottom: 10px; /* Margen inferior */
+  font-size: 20px; /* Tamaño de fuente */
 }
 
-#instagram:hover, #facebook:hover, #whatsapp:hover{
-  animation: pulse 0.5s infinite;
-  font-size: 2em;
+/* Efecto hover específico para los íconos de redes sociales */
+#instagram:hover, #facebook:hover, #whatsapp:hover {
+  animation: pulse 0.5s infinite; /* Animación de pulso */
+  font-size: 2em; /* Tamaño de fuente */
 }
-#instagram:hover{
+
+/* Color específico para el ícono de Instagram */
+#instagram:hover {
   color: rgb(174, 48, 179);
-} 
-#facebook:hover{
+}
+
+/* Color específico para el ícono de Facebook */
+#facebook:hover {
   color: rgb(8, 102, 255);
 }
-#whatsapp:hover{
+
+/* Color específico para el ícono de WhatsApp */
+#whatsapp:hover {
   color: rgb(8, 255, 8);
 }
 
-/* Media Query para Celular */
+/* Media Query para dispositivos móviles */
 @media (max-width: 768px) {
   .clase_formulario {
     max-width: 90%; /* Más estrecho para celulares */
   }
 
   .hamburguesa {
-    display: block;
+    display: block; /* Muestra el botón hamburguesa */
   }
 
   .navbar {
@@ -288,26 +327,26 @@ footer {
   }
 
   .nav_links {
-    flex-direction: column;
-    width: 100%;
-    display: none;
+    flex-direction: column; /* Dispone los enlaces en columna */
+    width: 100%; /* Ancho completo */
+    display: none; /* Oculta el menú por defecto */
     position: absolute;
     top: 100%;
     left: 0;
-    text-align: center;
-    background-color: rgba(0 , 0, 0, 0.5);
+    text-align: center; /* Alineación centrada */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
   }
 
   .nav_links.active {
-    display: flex;
+    display: flex; /* Muestra el menú al activarse */
     flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: rgba(0 , 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
-    z-index: 100;   /*Asegurarse de que el menú esté sobre otros elementos */
+    z-index: 100; /* Asegura que el menú esté sobre otros elementos */
   }
 
   header .navbar {
@@ -321,34 +360,34 @@ footer {
   }
 }
 
-/* Media Query para Tablet */
+/* Media Query para tablet */
 @media (max-width: 1024px) {
   .clase_formulario {
-      max-width: 450px; /* Un poco más estrecho para tablet */
+    max-width: 450px; /* Un poco más estrecho para tablet */
   }
 
   .nav_links, .hamburguesa {
-      display: block;
+    display: block; /* Muestra el menú y el botón hamburguesa */
   }
 }
 
-/* Media Query para PC Escritorio */
+/* Media Query para escritorio */
 @media (min-width: 1025px) {
   .clase_formulario {
-      max-width: 500px; /* Ideal para escritorios */
+    max-width: 500px; /* Ideal para escritorios */
   }
 
   header .navbar {
-      flex-direction: row;
-      justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .nav_links {
-      display: flex; /* Asegúrate de que el menú horizontal esté visible */
-      align-items: center;
+    display: flex; /* Asegúrate de que el menú horizontal esté visible */
+    align-items: center;
   }
 
   .hamburguesa {
-      display: none; /* Oculta el menú hamburguesa en escritorio */
+    display: none; /* Oculta el menú hamburguesa en escritorio */
   }
 }
