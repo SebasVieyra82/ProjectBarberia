@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "nombre": "Dale un giro a tu look con Corte Clásico:",
+        "descripcion": "El estilo atemporal que nunca pasa de moda.",
+        "foto": "https://img.freepik.com/foto-gratis/primer-plano-hairstilyst-dando-corte-pelo_23-2148506297.jpg?w=740&t=st=1716434214~exp=1716434814~hmac=cb43afb6e3a282addaf105ac99e408359e8fe6d932a5b9eff758d1edb5aba455"
+    },
+    {
+        "id":2,
+        "nombre": "Domina tu estilo con Barba y Bigote:",
+        "descripcion": "Perfecciona tu barba y bigote para un look varonil y actual.",
+        "foto": "https://img.freepik.com/foto-gratis/elegante-hombre-sentado-barberia_1157-24975.jpg?t=st=1716435612~exp=1716439212~hmac=4fedc4cb511de5185cde9e113bc59a4da64a656d5b6bcb1ef7c6e2e09eb91a09&w=740"
+    },
+    {
+        "id":3,
+        "nombre": "Siente la frescura con Corte Moderno:",
+        "descripcion": "Un corte actual y vanguardista que marca tendencia.",
+        "foto": "https://img.freepik.com/fotos-premium/joven-pelo-cortado_266732-14111.jpg?w=740"
+    },
+    {
+        "id":4,
+        "nombre": "Refresca tu cabello con Lavado de Cabello:",
+        "descripcion": "Un lavado revitalizante para un cabello limpio y saludable.",
+        "foto": "https://img.freepik.com/foto-gratis/mujer-tener-pelo-lavado-latino-peluqueria_23-2150555155.jpg?t=st=1716435740~exp=1716439340~hmac=2e6e45acc25500299395a3e528a48e87827f20bee1a1139161954830813aa730&w=740"
+    }
+]
