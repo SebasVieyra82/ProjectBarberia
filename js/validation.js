@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Función para manejar el formulario de contacto si es necesario
+    // Maneja el formulario de contacto cuando el DOM está completamente cargado
     const form = document.getElementById("contact-form");
     if (form) {
         form.addEventListener("submit", function (event) {
-            event.preventDefault();
-            if (validateForm()) {
-                this.submit();
+            event.preventDefault(); // Previene el envío del formulario
+            if (validateForm()) { // Valida el formulario
+                sendEmail(); // Envía el "email" simulado
             }
         });
     }
     
+    // Función para validar los campos del formulario
     function validateForm() {
-        const form = document.querySelector('form');
+        // Obtiene los valores de los campos del formulario y los recorta para eliminar espacios en blanco
         const name = document.querySelector('input[name="nombre"]').value.trim();
         const telefono = document.querySelector('input[name="telefono"]').value.trim();
         const email = document.querySelector('input[name="email"]').value.trim();
@@ -19,27 +20,52 @@ document.addEventListener("DOMContentLoaded", function () {
         const consulta = document.querySelector('select[name="consulta"]').value;
         const terms = document.querySelector('input[name="terms"]').checked;
     
+        // Verifica que todos los campos estén completos y los términos aceptados
         if (!name || !telefono || !email || !message || consulta === "" || !terms) {
             alert("Todos los campos son obligatorios y debes aceptar los términos y condiciones.");
-            return false;
+            return false; // Retorna false si falta algún campo o no se aceptaron los términos
         }
-        return true;
+        return true; // Retorna true si todos los campos son válidos
     }
 
-    // Función para manejar la visibilidad del menú de hamburguesa
+    // Función para simular el envío de un email
+    function sendEmail() {
+        // Obtiene los valores de los campos del formulario y los recorta para eliminar espacios en blanco
+        const name = document.querySelector('input[name="nombre"]').value.trim();
+        const telefono = document.querySelector('input[name="telefono"]').value.trim();
+        const email = document.querySelector('input[name="email"]').value.trim();
+        const message = document.querySelector('textarea[name="message"]').value.trim();
+        const consulta = document.querySelector('select[name="consulta"]').value;
+
+        // Contenido del "email" a enviar
+        const emailContent = `
+            Nombre: ${name}
+            Teléfono: ${telefono}
+            Correo Electrónico: ${email}
+            Tipo de Consulta: ${consulta}
+            Mensaje: ${message}
+        `;
+
+        // Muestra el contenido del "email" en la consola
+        console.log("Email enviado con el siguiente contenido:");
+        console.log(emailContent);
+        alert("Mensaje enviado correctamente."); // Alerta de confirmación
+    }
+
+    // Maneja la visibilidad del menú hamburguesa
     const hamburguesa = document.querySelector(".hamburguesa");
     const navLinks = document.querySelector(".nav_links");
 
-    hamburguesa.addEventListener("click", function() {
-        navLinks.classList.toggle("active");
-    });
+    if (hamburguesa && navLinks) {
+        hamburguesa.addEventListener("click", function() {
+            navLinks.classList.toggle("active"); // Alterna la visibilidad del menú
+        });
 
-     // Agrega evento al cuerpo para cerrar el menú de hamburguesa al hacer clic en cualquier lugar fuera del menú
-     document.body.addEventListener("click", function(e) {
-        // Verifica si el clic no es en el hamburguesa o en uno de sus descendientes
-        if (!hamburguesa.contains(e.target) && navLinks.classList.contains("active")) {
-            navLinks.classList.remove("active");
-        }
-    });
-
+        // Cierra el menú hamburguesa al hacer clic fuera de él
+        document.body.addEventListener("click", function(e) {
+            if (!hamburguesa.contains(e.target) && navLinks.classList.contains("active")) {
+                navLinks.classList.remove("active"); // Cierra el menú
+            }
+        });
+    }
 });
