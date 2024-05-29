@@ -116,7 +116,7 @@ body {
 /* Estilos para el texto dentro de .main_imagen */
 .main_imagen h2, h3, .main_imagen p {
   max-width: 800px; /* Ancho máximo del texto para mejorar la legibilidad */
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+  background-color: rgba(0, 0, 0); /* Fondo oscuro */
   padding: 10px; /* Padding alrededor del texto */
   border-radius: 10px; /* Bordes redondeados */
 }
