@@ -6,6 +6,12 @@ function guardarInformacion() {
   var dia = document.getElementById("dia").value;
   var hora = document.getElementById("hora").value;
 
+  // Validar que todos los campos estén completos
+  if (!nombre || !telefono || !mail || !dia || !hora) {
+      alert("Todos los campos son obligatorios. Por favor, complete todos los campos.");
+      return;
+  }
+
   // Crear un objeto con la información
   var datos = {
       "nombre": nombre,
