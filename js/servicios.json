@@ -1,0 +1,14 @@
+[
+    {
+        "id":1,
+        "nombre": "Dale un giro a tu look con el corte con maquina",
+        "descripcion": "El estilo atemporal que nunca pasa de moda.",
+        "foto": "https://img.freepik.com/fotos-premium/fotografia-trasera-peluquero-cortando-cabello-cliente-masculino-barberia_152637-8691.jpg?w=740"
+    },
+    {
+        "id":2,
+        "nombre": "Mantene tu estilo con el corte de tijera y navaja",
+        "descripcion": "Perfecciona tu barba y cabello para un look varonil y actual.",
+        "foto": "https://img.freepik.com/fotos-premium/actitud-seria-retrato-primer-plano-estilista-barbudo-joven-agradable-que-sostiene-tijeras-peine-mientras-corta-pelo-su-cliente_259150-12720.jpg?w=740"
+    }
+]
