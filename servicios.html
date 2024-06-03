@@ -5,11 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barberia Lords - Servicios</title>
+    <style>
+        .container{
+            display: flex; /* Flexbox para organizar las tarjetas */
+            flex-wrap: wrap; /* Permite que las tarjetas se envuelvan */
+            justify-content: space-evenly; /* Espacio uniforme entre las tarjetas */
+        }
+        .tarjeta{
+            width: 300px; /* Ancho de las tarjetas */
+            border: 1px solid black; /* Borde de las tarjetas */
+            border-radius: 10px; /* Bordes redondeados */
+            margin-top: 10px; /* Espacio superior entre las tarjetas */
+        }
+        .tarjeta img{
+            width: 100%; /* La imagen ocupa todo el ancho de la tarjeta */
+        }
+        .cuerpo{
+            padding: 10px; /* Espacio interno alrededor del contenido de la tarjeta */
+        }
+    </style>
     <link rel="shortcut icon" href="imagenes/barberiaicono.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 
 <body>
@@ -17,6 +37,7 @@
     <header>
         <nav class="navbar">
             <div class="logo"><img src="imagenes/BarberShop2.png" alt="logo lords" height="100"></div>
+            
             <ul class="nav_links">
                 <li><a href="index.html" aria-label="ir a la pagina de inicio">Inicio</a></li>
                 <li><a href="sobre-nosotros.html" aria-label="Conocer sobre la barberia">Sobre nosotros</a></li>
@@ -24,7 +45,9 @@
                 <li><a href="galeria.html" aria-label="Imagenes sobre cortes de cabello">Galería</a></li>
                 <li><a href="turnos.html" aria-label="Seccion de turnos de la barberia">Turnos On-line</a></li>
                 <li><a href="contacto.html" aria-label="Contactenos para mas informacion">Contacto</a></li>
+                <li><a href="sucursales.html" aria-label="Surcusales de la barberia">Sucursales</a></li>
             </ul>
+    
             <button class="hamburguesa" aria-label="abrir menu de navegacion" type="button">
                 <span class="line"></span>
                 <span class="line"></span>
@@ -32,16 +55,29 @@
             </button>  
         </nav>
     </header>
-    <!-- Servicios -->
+
+    <!-- Sección de Servicios -->
     <main class="clase_main">
         <div class="main_imagen">
-            <h2>Servicios Destacados</h2>
-        <h3>Corte de cabello</h3>
-        <p>Corte de cabello con lavado incluído y terminaciones a navaja.</p>
-        <h3>Arreglo de barba</h3>
-        <p>Arreglo de barba con fomento caliente y frío. Terminaciones a navaja y productos para el cuidado de tu piel y barba.</p>
+            <div id="app">
+                <h2>Servicios destacados</h2>
+                <!--<p>{{datos}}</p> -->
+                <div class="container">
+                    <!-- Ciclo para iterar sobre los datos e insertar tarjetas -->
+                    <div v-for="elemento in datos" class="tarjeta">
+                        <div class="cuerpo">
+                            <img width="100" :src="elemento.foto" :alt="elemento.foto.nombre"> <!-- Imagen de la tarjeta -->
+                            <!--<p>{{}}</p> -->
+                            <p>{{elemento.nombre}}</p> <!-- Nombre del elemento -->
+                            <p>{{elemento.descripcion}}</p> <!-- Descripción del elemento -->
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            
         </div>
     </main>
+    
     <!-- Footer -->
     <footer class="footer">
         <ul class="red_social-icon">
@@ -69,5 +105,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script> <!-- Vue.js -->
+    <script src="./js/servicios.js"></script> <!-- Script para manejar servicios -->
 </body>
 </html>
